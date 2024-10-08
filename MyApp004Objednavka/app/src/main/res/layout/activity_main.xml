@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="20sp"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/tvNadpis"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Jaké kolo si chcete objednat?"
+        android:textAlignment="center"/>
+
+    <RadioGroup
+        android:id="@+id/rgKola"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/rbKolo1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="OIZ M10"
+            android:checked="true"/>
+
+        <RadioButton
+            android:id="@+id/rbKolo2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="OIZ M20"/>
+
+        <RadioButton
+            android:id="@+id/rbKolo3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="OIZ M30"/>
+
+    </RadioGroup>
+
+    <CheckBox
+        android:id="@+id/cbVidlice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="lepší vidlice"/>
+
+    <CheckBox
+        android:id="@+id/cbSedlo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="lepší sedlo"/>
+
+    <CheckBox
+        android:id="@+id/cbRiditka"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Karbonová řidítka"/>
+
+    <Button
+        android:id="@+id/btnObjednavka"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Objednat kolo"/>
+
+    <TextView
+        android:id="@+id/tvObjednavka"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Souhrn objednávky: "/>
+
+    <ImageView
+        android:id="@+id/ivKolo"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:src="@drawable/img"
+        android:scaleType="centerInside"/>
+
+</LinearLayout>
