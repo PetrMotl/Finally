@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="20sp"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/tvNadpis"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Jakou pumpu si chcete objednat?"
+        android:textAlignment="center"/>
+
+    <RadioGroup
+        android:id="@+id/rgPumpy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/rbPumpa1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tandem"
+            android:checked="true"/>
+
+        <RadioButton
+            android:id="@+id/rbPumpa2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Minimed"/>
+
+        <RadioButton
+            android:id="@+id/rbPumpa3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ypso"/>
+
+    </RadioGroup>
+
+    <CheckBox
+        android:id="@+id/cbSenzor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Kontinuální měření senzorem"/>
+
+    <CheckBox
+        android:id="@+id/cbBluetooth"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Spojení s telefonem pomocí bluetooth"/>
+
+    <CheckBox
+        android:id="@+id/cbAI"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Predikce glykémie pomocí AI"/>
+
+    <Button
+        android:id="@+id/btnObjednavka"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Objednat pumpu"/>
+
+    <TextView
+        android:id="@+id/tvObjednavka"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Souhrn objednávky: "/>
+
+    <ImageView
+        android:id="@+id/ivPumpa"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:src="@drawable/tandem"
+        android:scaleType="centerInside"/>
+
+</LinearLayout>
