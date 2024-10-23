@@ -1,9 +1,12 @@
 package com.example.myapp009objednavkaho
 
+import android.graphics.Color
 import android.os.Bundle
 import android.widget.RadioButton
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.myapp009objednavkaho.databinding.ActivityMainBinding
+import com.google.android.material.snackbar.Snackbar
 
 class MainActivity : AppCompatActivity() {
 
@@ -38,6 +41,20 @@ class MainActivity : AppCompatActivity() {
                     (if(aipodpora) "; léčba s AI" else "")
 
             binding.tvObjednavka.text = objednavkaText
+
+
+            Snackbar.make(binding.root, "Objednávka odeslána", Snackbar.LENGTH_SHORT)
+
+                .setDuration(7000)
+                .setBackgroundTint(Color.parseColor("#FF35AA"))
+                .setTextColor(Color.BLACK)
+                .setActionTextColor(Color.WHITE)
+
+                .setAction("Zavřít") {
+                    Toast.makeText(this, "Zavírám SNACKBAR", Toast.LENGTH_SHORT).show()
+                }
+
+                .show()
 
         }
 
