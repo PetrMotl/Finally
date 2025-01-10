@@ -1,6 +1,5 @@
-package drawable
+package com.example.semestralka
 
-import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
@@ -11,6 +10,7 @@ import com.example.semestralka.data.database.DatabaseBuilder
 import com.example.semestralka.ui.adapter.ExpenseAdapter
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
+
 
 class ExpenseListActivity : AppCompatActivity() {
 
