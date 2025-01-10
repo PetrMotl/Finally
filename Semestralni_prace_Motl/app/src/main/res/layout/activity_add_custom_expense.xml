@@ -1,0 +1,52 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AddCustomExpenseActivity">
+
+    <!-- Pole pro Popis -->
+    <EditText
+        android:id="@+id/et_description"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Popis"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:padding="16dp"/>
+
+    <!-- Pole pro Množství -->
+    <EditText
+        android:id="@+id/et_quantity"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Množství"
+        app:layout_constraintTop_toBottomOf="@id/et_description"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:padding="16dp"/>
+
+    <!-- Pole pro Cenu -->
+    <EditText
+        android:id="@+id/et_price"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Cena"
+        app:layout_constraintTop_toBottomOf="@id/et_quantity"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:padding="16dp"/>
+
+    <!-- Tlačítko pro přidání vlastního výdaje -->
+    <Button
+        android:id="@+id/btn_add_custom_expense"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Přidat Výdaj"
+        app:layout_constraintTop_toBottomOf="@id/et_price"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:padding="16dp"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

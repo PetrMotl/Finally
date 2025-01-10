@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Barvy pro tlačítka -->
+    <color name="colorPrimary">#2196F3</color> <!-- Modrá pro tlačítko Zobrazit seznam -->
+    <color name="colorAccent">#FF5722</color> <!-- Oranžová pro Smazat vše -->
+
+    <!-- Nové barvy pro lepší kontrast -->
+    <color name="buttonTextColor">#FFFFFF</color> <!-- Bílé texty pro tlačítka -->
+    <color name="buttonBackground">#FF9800</color> <!-- Tlačítka s tmavším pozadím pro lepší kontrast -->
+
+    <color name="buttonBackgroundAccent">#FF9800</color> <!-- Světlejší oranžová pro Smazat vše -->
+
+    <!-- Barva pozadí pro celou stránku -->
+    <color name="colorBackground">#F9F9F9</color>
+</resources>
+
