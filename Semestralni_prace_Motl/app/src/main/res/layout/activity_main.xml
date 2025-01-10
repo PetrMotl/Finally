@@ -6,19 +6,13 @@
     android:background="@drawable/background"
     tools:context=".MainActivity">
 
-    <!-- Obrázek na pozadí, který se přizpůsobí obrazovce -->
-
-    <!-- Text pro celkovou útratu -->
-
     <ImageView
         android:id="@+id/imageView2"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:contentDescription="Pozadí aplikace"
         android:scaleType="centerCrop"
-        android:src="@drawable/background"
-        tools:layout_editor_absoluteX="-60dp"
-        tools:layout_editor_absoluteY="0dp" />
+        android:src="@drawable/background" />
 
     <TextView
         android:id="@+id/tv_total_spent"
@@ -27,152 +21,126 @@
         android:text="Celkem utraceno: 0 Kč"
         android:textSize="20sp"
         android:textColor="#ffffff"
-        android:background="#6200EE"
+        android:background="#F44336"
         android:padding="16dp"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:gravity="center"
-        android:layout_marginTop="16dp"/>
-
-    <!-- Tlačítka pro "Zobrazit seznam" a "Smazat vše" (v horní části) -->
-
-    <!-- Definování Guideline pro rozdělení prostoru -->
+        android:layout_marginTop="16dp" />
 
     <Button
         android:id="@+id/btn_open_expense_list"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="24dp"
-        android:background="@color/buttonBackground"
+        android:backgroundTint="#FF9800"
         android:padding="16dp"
         android:text="Zobrazit Seznam"
-        android:textColor="#040404"
+        android:textColor="#FFFDFD"
         app:layout_constraintEnd_toStartOf="@id/btn_clear_all"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tv_total_spent" />
 
     <Button
         android:id="@+id/btn_clear_all"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="99dp"
         android:layout_marginEnd="16dp"
-        android:background="#FF5722"
+        android:backgroundTint="#FF9800"
         android:padding="16dp"
         android:text="Smazat vše"
-        android:textColor="#ffffff"
+        android:textColor="#E91E63"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/btn_open_expense_list"
-        app:layout_constraintTop_toTopOf="@+id/imageView2" />
+        app:layout_constraintTop_toTopOf="@id/btn_open_expense_list" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline_top"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.4" />
-
-    <!-- Tlačítka pro přidání výdajů (na jednom řádku) -->
-    <!-- Tlačítko pro Přidat Pivo -->
-    <!-- Tlačítko pro Přidat Pivo -->
-
-    <!-- Obrázek pod tlačítkem Přidat Pivo -->
-
+        app:layout_constraintGuide_begin="293dp" />
 
     <Button
         android:id="@+id/btn_add_beer"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:background="#6200EE"
+        android:backgroundTint="#FF5722"
         android:padding="16dp"
         android:text="Přidat Pivo"
         android:textColor="#ffffff"
+        android:textSize="14sp"
         app:layout_constraintEnd_toStartOf="@id/btn_add_rum"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/guideline_top" />
-
-    <!-- Tlačítko pro Přidat Rum s kolou -->
-    <ImageView
-        android:id="@+id/img_beer"
-        android:layout_width="100dp"
-        android:layout_height="80dp"
-        android:layout_marginTop="16dp"
-        android:src="@drawable/pivo"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHeight_percent="0.3"
-        app:layout_constraintHorizontal_bias="0.051"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/btn_add_beer"
-        app:layout_constraintWidth_percent="0.5" />
 
     <Button
         android:id="@+id/btn_add_rum"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Přidat Rum s kolou"
+        android:text="Přidat Rum"
         android:textColor="#ffffff"
-        android:background="#6200EE"
+        android:backgroundTint="#FF5722"
         android:padding="16dp"
+        android:textSize="14sp"
         app:layout_constraintTop_toBottomOf="@id/guideline_top"
         app:layout_constraintStart_toEndOf="@id/btn_add_beer"
-        app:layout_constraintEnd_toStartOf="@id/btn_add_kofola"
-        android:layout_marginEnd="8dp"/>
+        app:layout_constraintEnd_toStartOf="@id/btn_add_kofola" />
 
-    <!-- Obrázek pod tlačítkem "Přidat Rum s kolou" -->
-    <ImageView
-        android:id="@+id/img_rum"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:src="@drawable/rum_kola"
-        app:layout_constraintTop_toBottomOf="@id/btn_add_rum"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="8dp"/>
-
-    <!-- Tlačítko pro Přidat Kofolu -->
     <Button
         android:id="@+id/btn_add_kofola"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="Přidat Kofolu"
         android:textColor="#ffffff"
-        android:background="#6200EE"
+        android:backgroundTint="#FF5722"
         android:padding="16dp"
-        app:layout_constraintTop_toBottomOf="@id/guideline_top"
+        android:textSize="14sp"
         app:layout_constraintStart_toEndOf="@id/btn_add_rum"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/guideline_top" />
 
-    <!-- Obrázek pod tlačítkem "Přidat Kofolu" -->
+    <ImageView
+        android:id="@+id/img_beer"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/pivo"
+        app:layout_constraintTop_toBottomOf="@id/btn_add_beer"
+        app:layout_constraintStart_toStartOf="@id/btn_add_beer"
+        app:layout_constraintEnd_toEndOf="@id/btn_add_beer" />
 
-    <!-- Tlačítko pro "Jiné" (posunuté níž na stránce) -->
+    <ImageView
+        android:id="@+id/img_rum"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/rum_kola"
+        app:layout_constraintTop_toBottomOf="@id/btn_add_rum"
+        app:layout_constraintStart_toStartOf="@id/btn_add_rum"
+        app:layout_constraintEnd_toEndOf="@id/btn_add_rum" />
 
     <ImageView
         android:id="@+id/img_kofola"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:layout_marginTop="24dp"
         android:src="@drawable/kofola"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.948"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/btn_add_kofola" />
+        app:layout_constraintTop_toBottomOf="@id/btn_add_kofola"
+        app:layout_constraintStart_toStartOf="@id/btn_add_kofola"
+        app:layout_constraintEnd_toEndOf="@id/btn_add_kofola" />
 
     <Button
         android:id="@+id/btn_add_other"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="168dp"
-        android:background="#6200EE"
+        android:layout_marginTop="60dp"
+        android:backgroundTint="#FF5722"
         android:padding="16dp"
         android:text="Jiné"
         android:textColor="#ffffff"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/btn_add_kofola" />
+        app:layout_constraintTop_toBottomOf="@id/img_kofola" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

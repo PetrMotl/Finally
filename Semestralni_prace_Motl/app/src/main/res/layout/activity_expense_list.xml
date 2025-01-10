@@ -3,7 +3,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/background"
     tools:context=".ExpenseListActivity">
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:contentDescription="Pozadí aplikace"
+        android:scaleType="centerCrop"
+        android:src="@drawable/background" />
 
     <!-- Tlačítko pro návrat na hlavní stránku -->
     <Button
