@@ -2,6 +2,7 @@ package com.example.semestralka
 
 import android.os.Bundle
 import android.widget.Button
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -10,7 +11,6 @@ import com.example.semestralka.data.database.DatabaseBuilder
 import com.example.semestralka.ui.adapter.ExpenseAdapter
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
-
 
 class ExpenseListActivity : AppCompatActivity() {
 
@@ -25,10 +25,27 @@ class ExpenseListActivity : AppCompatActivity() {
 
         recyclerView.layoutManager = LinearLayoutManager(this)
 
-        // Inicializace adapteru
-        expenseAdapter = ExpenseAdapter(emptyList()) { expense ->
-            // Akce na dlouhý klik (mazání)
-        }
+        // Inicializace adapteru s funkcí pro mazání
+        expenseAdapter = ExpenseAdapter(emptyList(),
+            onItemLongClick = { expense ->
+                // Akce na dlouhý klik (volitelná)
+            },
+            onDeleteClick = { expense ->
+                // Zobrazení dialogu pro potvrzení smazání
+                AlertDialog.Builder(this)
+                    .setTitle("Smazat položku")
+                    .setMessage("Opravdu chcete smazat položku \"${expense.name}\"?")
+                    .setPositiveButton("Ano") { _, _ ->
+                        lifecycleScope.launch {
+                            DatabaseBuilder.getInstance(applicationContext)
+                                .expenseDao()
+                                .deleteExpense(expense)  // Mazání položky z databáze
+                        }
+                    }
+                    .setNegativeButton("Ne", null)
+                    .show()
+            }
+        )
         recyclerView.adapter = expenseAdapter
 
         // Načtení dat z databáze
