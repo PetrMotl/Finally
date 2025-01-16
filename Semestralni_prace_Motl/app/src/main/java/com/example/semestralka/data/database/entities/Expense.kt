@@ -4,13 +4,14 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 import java.util.Date
 
-@Entity(tableName = "expenses")
+//Definuje třídu expense, která prezentuje tabulku expenses v databázi
+@Entity(tableName = "expenses") //název tabulky v databázi
 data class Expense(
-    @PrimaryKey(autoGenerate = true) val id: Int = 0,
+    @PrimaryKey(autoGenerate = true) val id: Int = 0, //id se automaticky generuje při vložení záznamu --> zabránění duplicitám
     val name: String,
     val amount: Double,
     val quantity: Int = 1,
     val totalPrice: Double,
-    val description: String?,
-    val date: Date
+    val description: String?, //zatím nedělám
+    val date: Date //zatím nedělám
 )

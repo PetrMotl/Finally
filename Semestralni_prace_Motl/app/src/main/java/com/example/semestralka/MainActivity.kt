@@ -30,7 +30,7 @@ class MainActivity : AppCompatActivity() {
         val otherButton: Button = findViewById(R.id.btn_add_other)  // ✅ Tlačítko pro "Jiné"
 
 
-        // ✅ Tlačítko pro přidání "Piva"
+        //  Tlačítko pro přidání "Piva"
         beerButton.setOnClickListener {
             addBeerExpense()
         }
@@ -46,23 +46,23 @@ class MainActivity : AppCompatActivity() {
         }
 
 
-        // ✅ Tlačítko pro smazání všech výdajů
+        // Tlačítko pro smazání všech výdajů
         clearAllButton.setOnClickListener {
             showClearAllDialog()
         }
 
-        // ✅ Tlačítko pro otevření seznamu výdajů
+        // Tlačítko pro otevření seznamu výdajů
         openListButton.setOnClickListener {
             val intent = Intent(this, ExpenseListActivity::class.java)
             startActivity(intent)
         }
-        //Tlačítko pro otevření ostatní
+        // Tlačítko pro otevření ostatní
         otherButton.setOnClickListener {
             val intent = Intent(this, AddCustomExpenseActivity::class.java)  // Otevření nové aktivity
             startActivity(intent)
         }
 
-        // ✅ Načtení a zobrazení celkové útraty
+        // Načtení a zobrazení celkové útraty
         lifecycleScope.launch {
             DatabaseBuilder.getInstance(applicationContext).expenseDao().getTotalSpent()
                 .collectLatest { totalSpent ->
@@ -72,7 +72,7 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    // ✅ Přidání výdaje "Pivo"
+    // Přidání výdaje "Pivo"
     private fun addBeerExpense() {
         val expense = Expense(
             name = "Pivo",
@@ -90,7 +90,7 @@ class MainActivity : AppCompatActivity() {
         Toast.makeText(this, "Pivo bylo přidáno!", Toast.LENGTH_SHORT).show()
     }
 
-    //Přidání výdaje "Rum s kolou"
+    // Přidání výdaje "Rum s kolou"
     private fun addRumExpense() {
         val expense = Expense(
             name = "Rum s kolou",
@@ -108,7 +108,7 @@ class MainActivity : AppCompatActivity() {
         Toast.makeText(this, "Rum s kolou byl přidán!", Toast.LENGTH_SHORT).show()
     }
 
-    //Přidání výdaje Kofola
+    // Přidání výdaje Kofola
     private fun addKofolaExpense() {
         val expense = Expense(
             name = "Kofola",
@@ -126,7 +126,7 @@ class MainActivity : AppCompatActivity() {
         Toast.makeText(this, "Kofola byla přidána!", Toast.LENGTH_SHORT).show()
     }
 
-    // ✅ Dialog pro potvrzení smazání všech výdajů
+    // Dialog pro potvrzení smazání všech výdajů
     private fun showClearAllDialog() {
         AlertDialog.Builder(this)
             .setTitle("Smazat všechny výdaje")
@@ -138,10 +138,10 @@ class MainActivity : AppCompatActivity() {
             .show()
     }
 
-    // ✅ Smazání všech výdajů
+    // Smazání všech výdajů
     private fun clearAllExpenses() {
         lifecycleScope.launch(Dispatchers.IO) {
-            DatabaseBuilder.getInstance(applicationContext).expenseDao().deleteAllExpenses()
+            DatabaseBuilder.getInstance(applicationContext).expenseDao().deleteAllExpenses() //getInstance zkotroluje zda už dtb existuje, expenseDao vrátí DAO pro práci s tabulkou
         }
         Toast.makeText(this, "Všechny výdaje byly smazány.", Toast.LENGTH_SHORT).show()
     }

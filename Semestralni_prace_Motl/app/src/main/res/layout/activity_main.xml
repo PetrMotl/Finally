@@ -6,6 +6,7 @@
     android:background="@drawable/background"
     tools:context=".MainActivity">
 
+    <!-- Nastavení pozadí -->
     <ImageView
         android:id="@+id/imageView2"
         android:layout_width="match_parent"
@@ -14,6 +15,7 @@
         android:scaleType="centerCrop"
         android:src="@drawable/background" />
 
+    <!-- Celkem utraceno -->
     <TextView
         android:id="@+id/tv_total_spent"
         android:layout_width="wrap_content"
@@ -29,6 +31,7 @@
         android:gravity="center"
         android:layout_marginTop="16dp" />
 
+    <!-- Tlačítko zobrazit seznam -->
     <Button
         android:id="@+id/btn_open_expense_list"
         android:layout_width="0dp"
@@ -43,6 +46,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tv_total_spent" />
 
+    <!-- Tlačítko smazat vše -->
     <Button
         android:id="@+id/btn_clear_all"
         android:layout_width="0dp"
@@ -56,6 +60,7 @@
         app:layout_constraintStart_toEndOf="@id/btn_open_expense_list"
         app:layout_constraintTop_toTopOf="@id/btn_open_expense_list" />
 
+    <!-- Zarovnání prvků -->
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline_top"
         android:layout_width="wrap_content"
@@ -63,6 +68,7 @@
         android:orientation="horizontal"
         app:layout_constraintGuide_begin="293dp" />
 
+    <!-- Tlačítko Pivo -->
     <Button
         android:id="@+id/btn_add_beer"
         android:layout_width="0dp"
@@ -76,6 +82,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/guideline_top" />
 
+    <!-- Tlačítko Rum -->
     <Button
         android:id="@+id/btn_add_rum"
         android:layout_width="0dp"
@@ -89,6 +96,7 @@
         app:layout_constraintStart_toEndOf="@id/btn_add_beer"
         app:layout_constraintEnd_toStartOf="@id/btn_add_kofola" />
 
+    <!-- Tlačítko kofola -->
     <Button
         android:id="@+id/btn_add_kofola"
         android:layout_width="0dp"
@@ -102,6 +110,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/guideline_top" />
 
+    <!-- Obrázek pivo -->
     <ImageView
         android:id="@+id/img_beer"
         android:layout_width="100dp"
@@ -111,6 +120,7 @@
         app:layout_constraintStart_toStartOf="@id/btn_add_beer"
         app:layout_constraintEnd_toEndOf="@id/btn_add_beer" />
 
+    <!-- Obrázek rum s kolou -->
     <ImageView
         android:id="@+id/img_rum"
         android:layout_width="100dp"
@@ -120,6 +130,7 @@
         app:layout_constraintStart_toStartOf="@id/btn_add_rum"
         app:layout_constraintEnd_toEndOf="@id/btn_add_rum" />
 
+    <!-- Obrázek kofola -->
     <ImageView
         android:id="@+id/img_kofola"
         android:layout_width="100dp"
@@ -129,6 +140,7 @@
         app:layout_constraintStart_toStartOf="@id/btn_add_kofola"
         app:layout_constraintEnd_toEndOf="@id/btn_add_kofola" />
 
+    <!-- Tlačítko jiné -->
     <Button
         android:id="@+id/btn_add_other"
         android:layout_width="wrap_content"

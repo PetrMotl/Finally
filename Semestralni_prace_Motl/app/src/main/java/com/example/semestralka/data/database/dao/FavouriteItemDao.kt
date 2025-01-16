@@ -4,6 +4,7 @@ import androidx.room.*
 import com.example.semestralka.data.database.entities.FavoriteItem
 import kotlinx.coroutines.flow.Flow
 
+//práce s daty v dtb u favourite itemu
 @Dao
 interface FavoriteItemDao {
     @Insert(onConflict = OnConflictStrategy.IGNORE)

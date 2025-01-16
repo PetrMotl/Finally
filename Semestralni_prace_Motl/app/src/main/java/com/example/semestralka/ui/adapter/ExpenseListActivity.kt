@@ -12,25 +12,25 @@ import com.example.semestralka.ui.adapter.ExpenseAdapter
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 
+//Načítání a mazání seznamu výdajů, pro vizuální přehled předává ExpenseAdapteru
 class ExpenseListActivity : AppCompatActivity() {
 
-    private lateinit var expenseAdapter: ExpenseAdapter
+    private lateinit var expenseAdapter: ExpenseAdapter //propojuje data z dtb s vizuálem
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_expense_list)
+        setContentView(R.layout.activity_expense_list) //nastavení zobrazení obrazovky
 
         val backButton: Button = findViewById(R.id.btn_back)
         val recyclerView: RecyclerView = findViewById(R.id.expensesRecyclerView)
 
-        recyclerView.layoutManager = LinearLayoutManager(this)
+        recyclerView.layoutManager = LinearLayoutManager(this) //nastavení vertikálního seznamu
 
         // Inicializace adapteru s funkcí pro mazání
         expenseAdapter = ExpenseAdapter(emptyList(),
-            onItemLongClick = { expense ->
-                // Akce na dlouhý klik (volitelná)
+            onItemLongClick = { expense -> //akce pro dlouhé podržení (nevyužívám zatím)
             },
-            onDeleteClick = { expense ->
+            onDeleteClick = { expense -> //akce pro kliknutí na mazání --> dialog
                 // Zobrazení dialogu pro potvrzení smazání
                 AlertDialog.Builder(this)
                     .setTitle("Smazat položku")
@@ -46,12 +46,12 @@ class ExpenseListActivity : AppCompatActivity() {
                     .show()
             }
         )
-        recyclerView.adapter = expenseAdapter
+        recyclerView.adapter = expenseAdapter //RecyclerView je propojen s adaptérem, takže se výdaje zobrazí v seznamu
 
         // Načtení dat z databáze
         lifecycleScope.launch {
             DatabaseBuilder.getInstance(applicationContext).expenseDao().getAllExpenses()
-                .collectLatest { expenses ->
+                .collectLatest { expenses -> //sledování změn a autamatická aktualizace zobrazení
                     expenseAdapter.updateExpenses(expenses)
                 }
         }
